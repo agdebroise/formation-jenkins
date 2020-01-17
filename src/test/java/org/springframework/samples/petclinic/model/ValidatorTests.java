@@ -37,7 +37,8 @@ public class ValidatorTests {
         Validator validator = createValidator();
         Set<ConstraintViolation<Person>> constraintViolations = validator.validate(person);
 
-        assertThat(constraintViolations.size()).isEqualTo(1);
+		/** agd change 1 to 3 **/
+        assertThat(constraintViolations.size()).isEqualTo(3);
         ConstraintViolation<Person> violation = constraintViolations.iterator().next();
         assertThat(violation.getPropertyPath().toString()).isEqualTo("firstName");
         assertThat(violation.getMessage()).isEqualTo("may not be empty");
